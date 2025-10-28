@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贴吧目录 - 百度贴吧</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="百度贴吧">
+                <span class="logo-text">百度贴吧</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="搜索帖子、用户或话题">
+            </div>
+            <div class="user-actions">
+                <a href="login.html" class="btn btn-default">登录</a>
+                <a href="register.html" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="tieba-list.html" class="nav-link active">贴吧目录</a></li>
+                <li class="nav-item"><a href="hot.html" class="nav-link">热门推荐</a></li>
+                <li class="nav-item"><a href="new-post.html" class="nav-link">发帖</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主体内容 -->
+    <main class="container">
+        <div class="main-content">
+            <!-- 左侧主要内容 -->
+            <div class="main-column">
+                <!-- 分类导航 -->
+                <div class="card">
+                    <div style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+                        <a href="#all" class="btn btn-primary">全部</a>
+                        <a href="#entertainment" class="btn btn-default">娱乐明星</a>
+                        <a href="#technology" class="btn btn-default">科技数码</a>
+                        <a href="#food" class="btn btn-default">美食</a>
+                        <a href="#travel" class="btn btn-default">旅游</a>
+                        <a href="#game" class="btn btn-default">游戏</a>
+                        <a href="#sports" class="btn btn-default">体育</a>
+                        <a href="#education" class="btn btn-default">教育</a>
+                    </div>
+                </div>
+
+                <!-- 热门贴吧 -->
+                <div class="card">
+                    <h2 class="card-title">热门贴吧</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px;">
+                        <!-- 贴吧卡片 -->
+                        <div class="card" style="margin-bottom: 0;">
+                            <a href="tieba-detail.html?id=1" style="text-decoration: none;">
+                                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                    <img src="images/tieba1.jpg" alt="电影吧" style="width: 50px; height: 50px; border-radius: 8px; margin-right: 15px;">
+                                    <div>
+                                        <h3 style="margin-bottom: 5px; color: #333;">电影吧</h3>
+                                        <p style="font-size: 12px; color: #999;">100万+ 关注</p>
+                                    </div>
+                                </div>
+                                <p style="font-size: 14px; color: #666; margin-bottom: 10px; line-height: 1.5;">讨论最新电影资讯，分享观影感受</p>
+                                <p style="font-size: 12px; color: #999;">今日新帖: 1,234</p>
+                            </a>
+                        </div>
+
+                        <div class="card" style="margin-bottom: 0;">
+                            <a href="tieba-detail.html?id=2" style="text-decoration: none;">
+                                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                    <img src="images/tieba2.jpg" alt="科技吧" style="width: 50px; height: 50px; border-radius: 8px; margin-right: 15px;">
+                                    <div>
+                                        <h3 style="margin-bottom: 5px; color: #333;">科技吧</h3>
+                                        <p style="font-size: 12px; color: #999;">80万+ 关注</p>
+                                    </div>
+                                </div>
+                                <p style="font-size: 14px; color: #666; margin-bottom: 10px; line-height: 1.5;">科技前沿，数码产品评测</p>
+                                <p style="font-size: 12px; color: #999;">今日新帖: 987</p>
+                            </a>
+                        </div>
+
+                        <div class="card" style="margin-bottom: 0;">
+                            <a href="tieba-detail.html?id=3" style="text-decoration: none;">
+                                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                    <img src="images/tieba3.jpg" alt="美食吧" style="width: 50px; height: 50px; border-radius: 8px; margin-right: 15px;">
+                                    <div>
+                                        <h3 style="margin-bottom: 5px; color: #333;">美食吧</h3>
+                                        <p style="font-size: 12px; color: #999;">120万+ 关注</p>
+                                    </div>
+                                </div>
+                                <p style="font-size: 14px; color: #666; margin-bottom: 10px; line-height: 1.5;">分享美食制作，探店体验</p>
+                                <p style="font-size: 12px; color: #999;">今日新帖: 2,345</p>
+                            </a>
+                        </div>
+
+                        <div class="card" style="margin-bottom: 0;">
+                            <a href="tieba-detail.html?id=4" style="text-decoration: none;">
+                                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                    <img src="images/tieba4.jpg" alt="旅游吧" style="width: 50px; height: 50px; border-radius: 8px; margin-right: 15px;">
+                                    <div>
+                                        <h3 style="margin-bottom: 5px; color: #333;">旅游吧</h3>
+                                        <p style="font-size: 12px; color: #999;">90万+ 关注</p>
+                                    </div>
+                                </div>
+                                <p style="font-size: 14px; color: #666; margin-bottom: 10px; line-height: 1.5;">旅行攻略，景点推荐</p>
+                                <p style="font-size: 12px; color: #999;">今日新帖: 1,567</p>
+                            </a>
+                        </div>
+
+                        <div class="card" style="margin-bottom: 0;">
+                            <a href="tieba-detail.html?id=5" style="text-decoration: none;">
+                                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                    <img src="images/tieba5.jpg" alt="游戏吧" style="width: 50px; height: 50px; border-radius: 8px; margin-right: 15px;">
+                                    <div>
+                                        <h3 style="margin-bottom: 5px; color: #333;">游戏吧</h3>
+                                        <p style="font-size: 12px; color: #999;">150万+ 关注</p>
+                                    </div>
+                                </div>
+                                <p style="font-size: 14px; color: #666; margin-bottom: 10px; line-height: 1.5;">游戏攻略，组队开黑</p>
+                                <p style="font-size: 12px; color: #999;">今日新帖: 3,456</p>
+                            </a>
+                        </div>
+
+                        <div class="card" style="margin-bottom: 0;">
+                            <a href="tieba-detail.html?id=6" style="text-decoration: none;">
+                                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                    <img src="images/tieba6.jpg" alt="体育吧" style="width: 50px; height: 50px; border-radius: 8px; margin-right: 15px;">
+                                    <div>
+                                        <h3 style="margin-bottom: 5px; color: #333;">体育吧</h3>
+                                        <p style="font-size: 12px; color: #999;">75万+ 关注</p>
+                                    </div>
+                                </div>
+                                <p style="font-size: 14px; color: #666; margin-bottom: 10px; line-height: 1.5;">体育赛事，运动健身</p>
+                                <p style="font-size: 12px; color: #999;">今日新帖: 876</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 分页 -->
+                <div class="pagination">
+                    <a href="#" class="page-link">上一页</a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link">4</a>
+                    <a href="#" class="page-link">5</a>
+                    <span>...</span>
+                    <a href="#" class="page-link">下一页</a>
+                </div>
+            </div>
+
+            <!-- 右侧边栏 -->
+            <div class="sidebar">
+                <!-- 创建贴吧 -->
+                <div class="card">
+                    <h2 class="card-title">创建贴吧</h2>
+                    <p style="margin-bottom: 15px; color: #666;">找不到你感兴趣的贴吧？自己创建一个吧！</p>
+                    <a href="create-tieba.html" class="btn btn-primary" style="width: 100%;">创建我的贴吧</a>
+                </div>
+
+                <!-- 我的关注 -->
+                <div class="card">
+                    <h2 class="card-title">我的关注</h2>
+                    <p style="margin-bottom: 15px; color: #666;">登录后可查看您关注的贴吧</p>
+                    <a href="login.html" class="btn btn-default" style="width: 100%;">立即登录</a>
+                </div>
+
+                <!-- 热门搜索 -->
+                <div class="card">
+                    <h2 class="card-title">热门搜索</h2>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #38f; text-decoration: none;"># 2023年度电影榜单</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #333; text-decoration: none;"># 最新手机推荐</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #333; text-decoration: none;"># 减肥健身方法</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #333; text-decoration: none;"># 家常菜食谱</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#" style="color: #333; text-decoration: none;"># 国内旅游胜地</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">关于我们</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">百度贴吧简介</a></li>
+                        <li><a href="#" class="footer-link">联系我们</a></li>
+                        <li><a href="#" class="footer-link">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">帮助中心</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">使用条款</a></li>
+                        <li><a href="#" class="footer-link">隐私政策</a></li>
+                        <li><a href="#" class="footer-link">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">客户端下载</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Android版</a></li>
+                        <li><a href="#" class="footer-link">iOS版</a></li>
+                        <li><a href="#" class="footer-link">电脑版</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2023 百度贴吧 版权所有
+            </div>
+        </div>
+    </footer>
+
+    <!-- 占位图片脚本 -->
+    <script>
+        document.querySelectorAll('img[src="images/logo.png"]').forEach(img => {
+            img.src = 'https://picsum.photos/40/40';
+        });
+        // 为贴吧卡片设置不同的图片
+        const tiebaImages = document.querySelectorAll('img[src^="images/tieba"]');
+        tiebaImages.forEach((img, index) => {
+            img.src = `https://picsum.photos/50/50?random=${index + 1}`;
+        });
+    </script>
+</body>
+</html>

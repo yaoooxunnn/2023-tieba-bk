@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发布帖子 - 百度贴吧</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="百度贴吧">
+                <span class="logo-text">百度贴吧</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="搜索帖子、用户或话题">
+            </div>
+            <div class="user-actions">
+                <a href="login.html" class="btn btn-default">登录</a>
+                <a href="register.html" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="tieba-list.html" class="nav-link">贴吧目录</a></li>
+                <li class="nav-item"><a href="hot.html" class="nav-link">热门推荐</a></li>
+                <li class="nav-item"><a href="new-post.html" class="nav-link active">发帖</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主体内容 -->
+    <main class="container">
+        <div class="main-content">
+            <!-- 左侧主要内容 -->
+            <div class="main-column">
+                <div class="card">
+                    <h2 class="card-title">发布新帖子</h2>
+                    
+                    <form class="post-form">
+                        <!-- 选择贴吧 -->
+                        <div class="form-group">
+                            <label for="tieba-select" class="form-label">选择贴吧</label>
+                            <select id="tieba-select" class="form-input">
+                                <option value="">请选择要发帖的贴吧</option>
+                                <option value="1">电影吧</option>
+                                <option value="2">科技吧</option>
+                                <option value="3">美食吧</option>
+                                <option value="4">旅游吧</option>
+                                <option value="5">游戏吧</option>
+                                <option value="6">体育吧</option>
+                            </select>
+                        </div>
+
+                        <!-- 帖子标题 -->
+                        <div class="form-group">
+                            <label for="post-title" class="form-label">帖子标题</label>
+                            <input type="text" id="post-title" class="form-input" placeholder="请输入帖子标题（5-50字）">
+                            <p style="font-size: 12px; color: #999; margin-top: 5px;">请确保标题准确反映帖子内容，避免使用夸张或误导性标题</p>
+                        </div>
+
+                        <!-- 帖子类型 -->
+                        <div class="form-group">
+                            <label class="form-label">帖子类型</label>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="radio" name="post-type" value="normal" checked style="margin-right: 5px;">
+                                    普通帖
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="radio" name="post-type" value="discussion" style="margin-right: 5px;">
+                                    讨论帖
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="radio" name="post-type" value="help" style="margin-right: 5px;">
+                                    求助帖
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="radio" name="post-type" value="share" style="margin-right: 5px;">
+                                    分享帖
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 帖子内容 -->
+                        <div class="form-group">
+                            <label for="post-content" class="form-label">帖子内容</label>
+                            <textarea id="post-content" class="form-textarea" placeholder="请输入帖子内容..."></textarea>
+                            <p style="font-size: 12px; color: #999; margin-top: 5px;">内容越丰富，越容易获得大家的关注和回复</p>
+                        </div>
+
+                        <!-- 工具栏 -->
+                        <div style="display: flex; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f8f8; border-radius: 4px;">
+                            <button type="button" style="background: none; border: none; cursor: pointer; margin-right: 20px; font-size: 16px;">📷</button>
+                            <button type="button" style="background: none; border: none; cursor: pointer; margin-right: 20px; font-size: 16px;">🎥</button>
+                            <button type="button" style="background: none; border: none; cursor: pointer; margin-right: 20px; font-size: 16px;">🔗</button>
+                            <button type="button" style="background: none; border: none; cursor: pointer; margin-right: 20px; font-size: 16px;">😊</button>
+                            <button type="button" style="background: none; border: none; cursor: pointer; margin-right: 20px; font-size: 16px;">✏️</button>
+                            <div style="margin-left: auto;">
+                                <span id="word-count">0</span>/10000 字
+                            </div>
+                        </div>
+
+                        <!-- 标签 -->
+                        <div class="form-group">
+                            <label for="post-tags" class="form-label">添加标签（选填）</label>
+                            <input type="text" id="post-tags" class="form-input" placeholder="添加标签，用逗号分隔（最多5个）">
+                            <p style="font-size: 12px; color: #999; margin-top: 5px;">添加标签可以让更多人看到你的帖子</p>
+                        </div>
+
+                        <!-- 发布选项 -->
+                        <div class="form-group">
+                            <label class="form-label">发布选项</label>
+                            <div style="display: flex; gap: 20px; align-items: center;">
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="post-options" value="anonymous" style="margin-right: 5px;">
+                                    匿名发布
+                                </label>
+                                <label style="display: flex; align-items: center; cursor: pointer;">
+                                    <input type="checkbox" name="post-options" value="notify" style="margin-right: 5px;" checked>
+                                    接收回复通知
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 提交按钮 -->
+                        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px;">
+                            <button type="button" class="btn btn-default" style="padding: 10px 40px; font-size: 16px;">保存草稿</button>
+                            <button type="submit" class="btn btn-primary" style="padding: 10px 40px; font-size: 16px;">发布帖子</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 右侧边栏 -->
+            <div class="sidebar">
+                <!-- 发帖须知 -->
+                <div class="card">
+                    <h2 class="card-title">发帖须知</h2>
+                    <ul style="list-style: none; color: #666; font-size: 14px; line-height: 1.6;">
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #f00;">•</span>
+                            请遵守相关法律法规，不得发布违法违规内容
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #f00;">•</span>
+                            文明发言，尊重他人，不得进行人身攻击
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #f00;">•</span>
+                            不得发布广告、垃圾信息或重复内容
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #f00;">•</span>
+                            保护个人隐私，不要透露敏感信息
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #f00;">•</span>
+                            遵守各贴吧的吧规，配合吧务管理
+                        </li>
+                    </ul>
+                    <p style="font-size: 12px; color: #f00; margin-top: 15px;">违规内容将被删除，情节严重者将被封禁账号！</p>
+                </div>
+
+                <!-- 草稿箱 -->
+                <div class="card">
+                    <h2 class="card-title">我的草稿</h2>
+                    <p style="margin-bottom: 15px; color: #666;">登录后可查看您保存的草稿</p>
+                    <a href="login.html" class="btn btn-default" style="width: 100%;">立即登录</a>
+                </div>
+
+                <!-- 最近发布 -->
+                <div class="card">
+                    <h2 class="card-title">最近发布</h2>
+                    <p style="margin-bottom: 15px; color: #666;">登录后可查看您最近发布的帖子</p>
+                    <a href="login.html" class="btn btn-default" style="width: 100%;">立即登录</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">关于我们</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">百度贴吧简介</a></li>
+                        <li><a href="#" class="footer-link">联系我们</a></li>
+                        <li><a href="#" class="footer-link">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">帮助中心</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">使用条款</a></li>
+                        <li><a href="#" class="footer-link">隐私政策</a></li>
+                        <li><a href="#" class="footer-link">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">客户端下载</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Android版</a></li>
+                        <li><a href="#" class="footer-link">iOS版</a></li>
+                        <li><a href="#" class="footer-link">电脑版</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2023 百度贴吧 版权所有
+            </div>
+        </div>
+    </footer>
+
+    <!-- 占位图片脚本 -->
+    <script>
+        document.querySelectorAll('img[src="images/logo.png"]').forEach(img => {
+            img.src = 'https://picsum.photos/40/40';
+        });
+
+        // 字数统计功能
+        const postContent = document.getElementById('post-content');
+        const wordCount = document.getElementById('word-count');
+
+        if (postContent && wordCount) {
+            postContent.addEventListener('input', function() {
+                const count = this.value.length;
+                wordCount.textContent = count;
+                
+                if (count > 10000) {
+                    wordCount.style.color = '#f00';
+                } else {
+                    wordCount.style.color = '';
+                }
+            });
+        }
+
+        // 表单提交处理
+        const postForm = document.querySelector('.post-form');
+        if (postForm) {
+            postForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('帖子发布成功！');
+                window.location.href = 'index.html';
+            });
+        }
+    </script>
+</body>
+</html>
